@@ -1,0 +1,39 @@
+class Bombilla:
+
+    def __init__(self):
+        self.encendido = False
+        self.cont = 0
+        self.fundido = False
+        
+    def encender (self):
+        if self.fundido:
+            print("La bombilla está fundida")
+        else:
+            if self.encendido :
+                print("La bombilla esta encendida")
+            else:
+                print("Se acaba de encender")
+                self.encendido  = True
+                self.cont += 1 
+            if self.cont == 1000 :
+                print("La bombilla se ha fundido")
+                self.fundido = True
+    
+    
+    def apagar (self) :
+        if self.fundido :
+            print("La bombilla está fundida")
+        else:
+            if self.encendido : 
+                print("La bombilla se ha apagado")
+                self.encendido = False
+            else :
+                print("La bombilla ya estaba apagada")
+
+
+b=Bombilla()
+
+for i in range(1000):
+    b.encender()
+
+    b.apagar()
